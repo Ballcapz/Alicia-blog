@@ -3,7 +3,6 @@ import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 
 const Bold = ({ children }) => <span className="bold">{children}</span>;
 
-
 const options = {
   renderMark: {
     [MARKS.BOLD]: text => <Bold>{text}</Bold>
@@ -37,13 +36,13 @@ const options = {
 
 function Post({ content, title, description}) {
 
-    const contentDoc = content;
+    console.log(content);
     
     return (
         <div className="post">
             <h1 className="title">{title}</h1>
             <p>{description}</p>
-            {contentDoc && documentToReactComponents(contentDoc, options)}
+            {content && documentToReactComponents(content, options)}
         </div>
     )
 }

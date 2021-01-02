@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Header from '@components/Header'
-import Footer from '@components/Footer'
 
 import { fetchEntries } from '../util/contentfulPosts';
 import Post from '../components/Post';
+import Preview from '@components/Preview';
 
 export default function Home({posts}) {
   return (
@@ -13,16 +13,15 @@ export default function Home({posts}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main style={{ height: '100%', width: '100%'}}>
         <Header title="Welcome" />
         <div className="posts">
           {posts.map((p) => {
-            return <Post key={p.title} title={p.title} content={p.content} description={p.description} />
+            return <Preview key={p.title} title={p.title} description={p.description} />
           })}
         </div>
       </main>
 
-      <Footer />
     </div>
   )
 }

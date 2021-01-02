@@ -1,0 +1,15 @@
+.preview {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  background-color: aqua;
+  cursor: pointer;
+}
+
+.preview:hover {
+  background-color: aquamarine;
+}
+
+.title {
+  font-size: 24px;
+}
