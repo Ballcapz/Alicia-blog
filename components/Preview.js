@@ -1,14 +1,16 @@
 import Link from 'next/link';
 import css from './Preview.module.css';
 
-function Preview({ title, description}) {
+function Preview({ slug, title, description}) {
 
     return (
         <div className={css.preview}>
-            <Link href={`/${encodeURIComponent(title)}`} >
-                <a className={css.title}>{title}</a>
+            <Link as={`/${slug}`} href="/[slug]" >
+                <a className={css.title}>
+                    {title}
+                    <p>{description}</p>
+                </a>
             </Link>
-            <p>{description}</p>
         </div>
     )
 }

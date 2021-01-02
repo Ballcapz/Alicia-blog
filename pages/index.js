@@ -9,15 +9,15 @@ export default function Home({posts}) {
   return (
     <div className="container">
       <Head>
-        <title>My blog</title>
+        <title>Trinity Oaks Farm</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main style={{ height: '100%', width: '100%'}}>
-        <Header title="Welcome" />
-        <div className="posts">
+        <Header title="Trinity Oaks Farm" />
+        <div className="previews">
           {posts.map((p) => {
-            return <Preview key={p.title} title={p.title} description={p.description} />
+            return <Preview key={p.id} id={p.id} slug={p.slug} title={p.title} description={p.description} />
           })}
         </div>
       </main>
@@ -29,7 +29,7 @@ export default function Home({posts}) {
 export async function getStaticProps() {
   const res = await fetchEntries();
   const posts = await res.map(p => {
-    return p.fields;
+    return {...p.fields, ...p.sys, slug: p.fields.title.split(' ').join('-')}
   });
 
   return {

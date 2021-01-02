@@ -1,5 +1,8 @@
+import Link from 'next/link';
+
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';
+import { fetchEntries } from '../util/contentfulPosts';
 
 const Bold = ({ children }) => <span className="bold">{children}</span>;
 
@@ -34,15 +37,41 @@ const options = {
   }
 };
 
-function Post({ content, title, description}) {
+function Post({ post }) {
+    
     return (
         <div className="post">
-            <h1 className="title">{title}</h1>
-            <p>{description}</p>
-            {content && documentToReactComponents(content, options)}
+            <Link href="/">
+                <a className="home-link">Home</a>
+            </Link>
+            {post && documentToReactComponents(post.content, options)}
         </div>
     )
 }
 
 
 export default Post
+
+
+export async function getStaticProps({ params }) {
+  const { slug } = params;
+  const title = slug.split('-').join(' ');
+  const res = (await fetchEntries());
+  const post = res.find(p => p.fields.title.toLowerCase() == title.toLowerCase()).fields;
+
+  return {
+    props: {
+      post
+    }
+  }
+}
+
+
+export async function getStaticPaths() {
+  const res = await fetchEntries();
+
+  return {
+      paths: res.map(p => `/${p.fields.title.split(' ').join('-')}`),
+      fallback: true
+  }
+}
