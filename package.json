@@ -9,6 +9,9 @@
     "export": "next export"
   },
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^14.1.2",
+    "@contentful/rich-text-react-renderer": "^14.1.2",
+    "@contentful/rich-text-types": "^14.1.2",
     "contentful": "^8.1.6",
     "next": "10.0.4",
     "react": "17.0.1",
