@@ -72,6 +72,5 @@ export async function getStaticPaths() {
 
   return {
       paths: res.map(p => `/${p.fields.title.split(' ').join('-')}`),
-      fallback: true
   }
 }
