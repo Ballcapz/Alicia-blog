@@ -5,6 +5,7 @@
   text-align: center;
   background-color: #25aee4;
   cursor: pointer;
+  border-radius: 12px;
 }
 
 .preview:hover {

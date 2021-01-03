@@ -3,7 +3,8 @@
 :root {
   --black: #36382e;
   --black-active: #51524c;
-  --white: #ede6e3;
+  --white-active: #f8f4f2;
+  --white: #fafafa;
   --red: #bf211e;
   --blue: #25aee4;
   --blue-active: #1688b6;
@@ -24,7 +25,7 @@ body {
 }
 
 main {
-  padding: 5rem 0;
+  padding: 1rem 0 5rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;

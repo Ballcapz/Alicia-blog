@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { fetchEntries } from '../util/contentfulPosts';
 import Preview from '@components/Preview';
 
-export default function Home({posts}) {
+export default function Home({posts, showSearch, setShowSearch}) {
   return (
     <div className="container">
       <Head>

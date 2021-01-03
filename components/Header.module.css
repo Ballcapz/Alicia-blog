@@ -1,10 +1,11 @@
 .header {
   height: 80px;
-  width: 95%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
+  padding: 0 2.5%;
+  border-bottom: 1px solid var(--black);
 }
 
 .header a {
