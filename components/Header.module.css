@@ -1,0 +1,39 @@
+.header {
+  height: 80px;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.header a:hover h1 {
+  color: var(--black-active);
+}
+
+.header a:visited {
+  color: var(--black);
+}
+
+.header .title {
+  font-size: 2rem;
+}
+
+.search {
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search:hover {
+  background-color: var(--gray);
+}
+
+.search img {
+  display: block;
+  width: 30px;
+  height: 30px;
+}

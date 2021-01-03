@@ -2,6 +2,7 @@
 
 :root {
   --black: #36382e;
+  --black-active: #51524c;
   --white: #ede6e3;
   --red: #bf211e;
   --blue: #25aee4;
@@ -44,12 +45,6 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.home-link {
-  position: absolute;
-  top: 20px;
-  left: 20px;
 }
 
 .previews {

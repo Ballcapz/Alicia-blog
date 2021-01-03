@@ -4,7 +4,7 @@ import Header from '@components/Header';
 function Application({ Component, pageProps }) {
   return (
     <>
-      <Header />
+      <Header title={"Trinity Oaks Farm"} />
       <Component {...pageProps} />
     </>
   )

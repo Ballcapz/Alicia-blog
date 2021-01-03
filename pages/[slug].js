@@ -45,10 +45,10 @@ function Post({ post }) {
             <Head>
               <title>{post?.title}</title>
             </Head>
-            <Link href="/">
-                <a className="home-link">Home</a>
-            </Link>
             {post && documentToReactComponents(post.content, options)}
+            <Link href="/">
+                <a className="home-link">Back Home</a>
+            </Link>
         </div>
     )
 }
