@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Head from 'next/head';
 
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';
@@ -41,6 +42,9 @@ function Post({ post }) {
     
     return (
         <div className="post">
+            <Head>
+              <title>{post?.title}</title>
+            </Head>
             <Link href="/">
                 <a className="home-link">Home</a>
             </Link>
